@@ -1,0 +1,22 @@
+{
+  "name": "node-project-sse",
+  "version": "1.0.0",
+  "description": "Server-sent events (SSE) for Node Js Project using EJS, expressJs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "keywords": [
+    "SSE",
+    "NodeJs",
+    "expressJs"
+  ],
+  "author": "Subhadipta Nayak",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2"
+  }
+}

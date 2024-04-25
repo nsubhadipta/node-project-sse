@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Real-time Updates</title>
+</head>
+<body>
+  <h1>Real-time Updates</h1>
+  <ul id="updates"></ul>
+
+  <script>
+    const url = '/stream';
+    const updatesElement = document.getElementById('updates');
+
+    const eventSource = new EventSource(url);
+
+    eventSource.onmessage = (event) => {
+      const data = JSON.parse(event.data);
+      const li = document.createElement('li');
+      li.textContent = `${data.timestamp}: ${data.message}`;
+      updatesElement.appendChild(li);
+    };
+
+    eventSource.onerror = (error) => {
+      console.error('EventSource error:', error);
+      eventSource.close();
+    };
+  </script>
+</body>
+</html>
